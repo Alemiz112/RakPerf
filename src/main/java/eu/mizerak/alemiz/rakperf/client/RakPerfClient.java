@@ -109,7 +109,7 @@ public class RakPerfClient extends RakPerfConnection {
             EncryptionCodecs.init(this.channel, key);
         }
 
-        this.sendFuture = this.channel.eventLoop().scheduleAtFixedRate(this::sendPayload, 50, 50, TimeUnit.MILLISECONDS);
+        this.sendFuture = this.channel.eventLoop().scheduleAtFixedRate(this::sendPayload, 50, 10, TimeUnit.MILLISECONDS);
 
         this.startTime = System.currentTimeMillis();
         this.lastInfoUpdate = this.startTime;
